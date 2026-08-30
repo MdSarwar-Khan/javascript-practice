@@ -47,6 +47,10 @@ buttons.forEach(button => {
             return;
         }
 
+        if (value === "." && exp.slice(-1) === ".") {
+            return;
+        }
+        
         exp += value;
         display.value = exp;
     });
