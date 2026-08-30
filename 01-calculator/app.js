@@ -46,7 +46,7 @@ buttons.forEach(button => {
         if(OPERATORS.includes(value) && OPERATORS.includes(exp.slice(-1))){
             return;
         }
-        
+
         exp += value;
         display.value = exp;
     });
