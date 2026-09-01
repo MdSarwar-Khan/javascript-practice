@@ -2,6 +2,7 @@ let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector(".reset");
 
 let turnO = true;
+let gameover = false;
 
 const winningCombinations = [
     [0, 1, 2],
@@ -17,6 +18,9 @@ const winningCombinations = [
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         console.log('Box clicked');
+
+        if (gameover) return;
+
         if (turnO) {
             box.textContent = "O";
             turnO = false;
@@ -26,7 +30,11 @@ boxes.forEach((box) => {
         }   
         box.disabled = true; 
 
-        checkWinner();
+       const winner = checkWinner();
+
+        if (!winner) {
+            checkDraw();
+        }
         });
     });
 
@@ -42,10 +50,26 @@ boxes.forEach((box) => {
         if (pos1 === pos2 && pos2 === pos3) {
             console.log(`Player ${pos1} wins!`);
             alert(`Player ${pos1} wins!`);
-            resetGame();
-            return;
+
+            gameover = true;
+
+            return true;;
         }
-    }};
+    }
+            return false;
+};
+
+const checkDraw = () => {
+
+    const allFilled = [...boxes].every(
+        (box) => box.textContent !== ""
+    );
+
+    if (allFilled) {
+        alert("It's a Draw!");
+        gameover = true;
+    }
+};
 
     const resetGame = () => {
         boxes.forEach((box) => {
@@ -53,6 +77,7 @@ boxes.forEach((box) => {
             box.disabled = false;
         });
         turnO = true;
+        gameover = false;
     };
 
     resetBtn.addEventListener("click", resetGame);

@@ -53,4 +53,38 @@ h1 {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .game {
+        width: 70vmin;
+        height: 70vmin;
+    }
+
+    .box {
+        width: 21vmin;
+        height: 21vmin;
+        font-size: 7vmin;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .game {
+        width: 85vmin;
+        height: 85vmin;
+    }
+
+    .box {
+        width: 26vmin;
+        height: 26vmin;
+        font-size: 9vmin;
+    }
+}
     
