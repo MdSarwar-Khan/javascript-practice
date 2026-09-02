@@ -200,7 +200,7 @@ button:hover {
 
 }
 
-top-button {
+.top-button {
     display: none;
 
     position: fixed;
