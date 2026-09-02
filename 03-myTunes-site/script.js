@@ -7,7 +7,6 @@ const navLinks = document.querySelectorAll("nav ul a");
 const readMoreButton = document.querySelector(".about-music .secondary");
 const aboutText = document.querySelector(".about-music p");
 const topButton = document.createElement("button");
-const shortText = aboutText.textContent;
 
 navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
@@ -18,27 +17,33 @@ navLinks.forEach(function (link) {
 trialButton.addEventListener("click", function () {
     trialButton.textContent = "Trial Started!";
     alert("Welcome to myTunes! Your free trial has started.");
+    setTimeout(function () {
+        trialButton.textContent = "Start Your Trial Now";
+    }, 2000);
 
 });
 
 
-const fullText =
-    shortText +
-    " You can enjoy your favorite movies, TV shows and music anytime and anywhere.";
+const shortText = "With over 100,000 movies and TV shows to choose from, there’s always something great to watch on myTunes.";
+
+const fullText = "With over 100,000 movies and TV shows to choose from, there’s always something great to watch on myTunes and if you watch on Orange TV 4K, you’ll be able to enjoy a tremendous selection of your favorite content in 4K HDR. So get ready to enjoy episodes of your favorite TV shows or hit movies you’ve been waiting to see — anytime, anywhere.";
 
 let isExpanded = false;
 
 readMoreButton.addEventListener("click", function () {
-
     if (isExpanded === false) {
         aboutText.textContent = fullText;
         readMoreButton.textContent = "Read Less";
+
         isExpanded = true;
+
     } else {
         aboutText.textContent = shortText;
         readMoreButton.textContent = "Read More";
+
         isExpanded = false;
     }
+
 });
 
 
