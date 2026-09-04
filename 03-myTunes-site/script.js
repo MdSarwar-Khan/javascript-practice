@@ -23,7 +23,6 @@ trialButton.addEventListener("click", function () {
 
 });
 
-
 const shortText = "With over 100,000 movies and TV shows to choose from, there’s always something great to watch on myTunes.";
 
 const fullText = "With over 100,000 movies and TV shows to choose from, there’s always something great to watch on myTunes and if you watch on Orange TV 4K, you’ll be able to enjoy a tremendous selection of your favorite content in 4K HDR. So get ready to enjoy episodes of your favorite TV shows or hit movies you’ve been waiting to see — anytime, anywhere.";

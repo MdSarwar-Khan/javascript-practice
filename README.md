@@ -27,6 +27,20 @@ A music-themed website built using HTML, CSS and JavaScript.
 - Gift card redeem interaction
 - Scroll-to-top button
 
+### 04 - Quiz Site
+A responsive quiz application built using HTML, CSS and JavaScript.
+
+- Multiple-choice quiz questions
+- Dynamic question rendering
+- Score tracking
+- Answer validation
+- Progress bar
+- Result and performance feedback
+- Restart quiz functionality
+- DOM manipulation and event handling
+- Responsive design
+
+
 ## Technologies
 
 - HTML
@@ -42,6 +56,7 @@ I'm using this repository to practice JavaScript concepts by building small proj
 - [x] Calculator
 - [x] Tic Tac Toe
 - [x] myTunes Site
+- [x] Quiz Site
 - [ ] More JavaScript projects
 
 ---
