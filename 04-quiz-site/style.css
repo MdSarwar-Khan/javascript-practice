@@ -81,7 +81,7 @@ body {
     padding: 1rem;
     cursor: pointer;
     text-align: left;
-    transition: 0.3 ease;
+    transition: 0.3s ease;
 }
 
 .question-options button:hover {
@@ -104,7 +104,7 @@ body {
 .next {
     margin: 10px;
     padding: 10px;
-    background-color: hwb(27 40% 23%);
+    background-color: #e86a33;
     font-size: 1rem;
     border-radius: 10px;
     box-shadow: none;
@@ -160,15 +160,13 @@ body {
     transition: width 0.3s ease;
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 500px) {
-  /*500px and below*/
 
   .screen {
     padding: 1rem;
   }
 
-  #start-screen h1 {
+  #strt-pg h1 {
     font-size: 2rem;
   }
 
@@ -176,7 +174,7 @@ body {
     font-size: 1.3rem;
   }
 
-  .answer-btn {
+  .question-options button {
     padding: 12px;
   }
 
