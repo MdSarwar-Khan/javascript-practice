@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TO-DO Web App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section class="head">
+            <h1>TO-DO APP</h1>
+        </section>
+        <section class="status-bar">
+            <button class="today">Today</button>
+            <button class="pending">Pending</button>
+            <button class="overdue">Overdue</button>
+        </section>
+        <div class="in">
+            <h2>Tasks</h2>
+            <button id="addbtn">+ Add Task</button>
+        </div>
+        <div class="addtask" hidden>
+            <label for="task name">Task Name </label>
+            <input 
+            id="task_name"
+            type="text"
+            placeholder="Enter Your Task..."
+            />
+            <label for="task completion date"> Task Completion Date </label>
+            <input
+            id="tdate"
+            type="date"
+            placeholder="Completion date..."
+            />
+            <button id="submit"> Submit </button>
+        </div>
+
+            
+        <section class="io">
+            <div class="listheader">
+            <span class="num">#</span>
+            <span class="check">done</span>
+            <span class="task">Tasks</span>
+            <span class="status">pending</span>
+            <span class="create">creation</span>
+            <span class="complete">completion</span>
+            </div>
+
+            <ul id="tasklist"></ul>
+        </section>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
