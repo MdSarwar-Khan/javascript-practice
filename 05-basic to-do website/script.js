@@ -9,7 +9,8 @@ const taskname = document.getElementById("task_name");
 const duedate = document.getElementById("tdate");
 
 addtaskbtn.addEventListener("click", ()=>{
-    addtasksection.hidden = false;
+    addtasksection.hidden = !addtasksection.hidden;
+
 })
 
 let tasks=[];

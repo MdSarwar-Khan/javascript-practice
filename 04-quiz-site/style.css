@@ -160,6 +160,7 @@ body {
     transition: width 0.3s ease;
 }
 
+
 @media (max-width: 500px) {
 
   .screen {

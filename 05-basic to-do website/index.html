@@ -19,22 +19,33 @@
         </section>
         <div class="in">
             <h2>Tasks</h2>
+
+
             <button id="addbtn">+ Add Task</button>
         </div>
+
         <div class="addtask" hidden>
-            <label for="task name">Task Name </label>
-            <input 
-            id="task_name"
-            type="text"
-            placeholder="Enter Your Task..."
-            />
-            <label for="task completion date"> Task Completion Date </label>
-            <input
-            id="tdate"
-            type="date"
-            placeholder="Completion date..."
-            />
-            <button id="submit"> Submit </button>
+            <h3>Add a New Task</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="task_name">Task Name</label>
+                    <input 
+                    id="task_name"
+                    type="text"
+                    placeholder="Enter your task..."
+                     />
+                </div>
+
+                <div class="form-group">
+                    <label for="tdate">Task Completion Date</label>
+                    <input
+                    id="tdate"
+                    type="date"
+                    />
+                </div>
+
+            </div>
+            <button id="submit">+ Add Task</button>
         </div>
 
             
