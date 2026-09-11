@@ -93,6 +93,12 @@ body {
     transform: translateY(-2px);
 }
 
+#tasklist li.completed .task,
+#tasklist li.completed .status {
+    text-decoration: line-through;
+    color: #8b7fa8;
+}
+
 .io {
     margin:25px 50px;
     min-height: 400px;

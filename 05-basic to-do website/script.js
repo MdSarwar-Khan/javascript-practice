@@ -13,34 +13,25 @@ addtaskbtn.addEventListener("click", ()=>{
 
 })
 
-let tasks=[];
+let tasks = [];
 
-submitbtn.addEventListener("click", () => {
-
-    const task = {
-        name: taskname.value,
-        completion_dt: duedate.value,
-        creation: new Date()
-    };
-
-    tasks.push(task);
-
+function renderTasks() {
     taskList.innerHTML = "";
 
     tasks.forEach((task, index) => {
-
         const li = document.createElement("li");
+        if (task.done) li.classList.add("completed");
 
         li.innerHTML = `
             <span class="num">${index + 1}</span>
 
             <span class="check">
-                <input type="checkbox">
+                <input type="checkbox" ${task.done ? "checked" : ""}>
             </span>
 
             <span class="task">${task.name}</span>
 
-            <span class="status">Pending</span>
+            <span class="status">${task.done ? "Completed" : "Pending"}</span>
 
             <span class="create">
                 ${task.creation.toLocaleDateString()}
@@ -51,9 +42,69 @@ submitbtn.addEventListener("click", () => {
             </span>
         `;
 
+        li.querySelector('input[type="checkbox"]').addEventListener("change", (e) => {
+            task.done = e.target.checked;
+            renderTasks();
+        });
+
         taskList.appendChild(li);
     });
+}
+
+submitbtn.addEventListener("click", () => {
+
+    const task = {
+        name: taskname.value,
+        due_dt: duedate.value,     
+        completed_dt: null,         
+        creation: new Date(),
+        done: false
+    };
+
+    tasks.push(task);
+    renderTasks();
 
     addtasksection.hidden = true;
 });
+
+function renderTasks() {
+    taskList.innerHTML = "";
+
+    tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        if (task.done) li.classList.add("completed");
+
+        li.innerHTML = `
+            <span class="num">${index + 1}</span>
+
+            <span class="check">
+                <input type="checkbox" ${task.done ? "checked" : ""}>
+            </span>
+
+            <span class="task">${task.name}</span>
+
+            <span class="status">${task.done ? "Completed" : "Pending"}</span>
+
+            <span class="create">
+                ${task.creation.toLocaleDateString()}
+            </span>
+
+            <span class="complete">
+                ${task.done ? task.completed_dt : task.due_dt}
+            </span>
+        `;
+
+        li.querySelector('input[type="checkbox"]').addEventListener("change", (e) => {
+            task.done = e.target.checked;
+
+            if (task.done) {
+                task.completed_dt = new Date().toLocaleDateString();
+            }
+
+            renderTasks();
+        });
+
+        taskList.appendChild(li);
+    });
+}
 
