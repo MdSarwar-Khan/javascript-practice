@@ -15,42 +15,6 @@ addtaskbtn.addEventListener("click", ()=>{
 
 let tasks = [];
 
-function renderTasks() {
-    taskList.innerHTML = "";
-
-    tasks.forEach((task, index) => {
-        const li = document.createElement("li");
-        if (task.done) li.classList.add("completed");
-
-        li.innerHTML = `
-            <span class="num">${index + 1}</span>
-
-            <span class="check">
-                <input type="checkbox" ${task.done ? "checked" : ""}>
-            </span>
-
-            <span class="task">${task.name}</span>
-
-            <span class="status">${task.done ? "Completed" : "Pending"}</span>
-
-            <span class="create">
-                ${task.creation.toLocaleDateString()}
-            </span>
-
-            <span class="complete">
-                ${task.completion_dt}
-            </span>
-        `;
-
-        li.querySelector('input[type="checkbox"]').addEventListener("change", (e) => {
-            task.done = e.target.checked;
-            renderTasks();
-        });
-
-        taskList.appendChild(li);
-    });
-}
-
 submitbtn.addEventListener("click", () => {
 
     const task = {
