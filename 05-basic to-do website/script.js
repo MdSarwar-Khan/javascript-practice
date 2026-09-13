@@ -14,8 +14,20 @@ addtaskbtn.addEventListener("click", ()=>{
 })
 
 let tasks = [];
+loadTasks();
+renderTasks();
+setDateLimits();
 
 submitbtn.addEventListener("click", () => {
+    if (!taskname.value.trim() || !duedate.value) {
+        alert("Please enter a task name and date.");
+        return;
+    }
+
+    if (duedate.value < duedate.min || duedate.value > duedate.max) {
+        alert("Please pick a date within the allowed range.");
+        return;
+    }
 
     const task = {
         name: taskname.value,
@@ -26,10 +38,22 @@ submitbtn.addEventListener("click", () => {
     };
 
     tasks.push(task);
+    saveTasks();
     renderTasks();
 
     addtasksection.hidden = true;
 });
+
+function setDateLimits() {
+    const today = new Date();
+    const maxDate = new Date();
+    maxDate.setFullYear(today.getFullYear() + 2); 
+
+    duedate.min = today.toISOString().split("T")[0];      
+    duedate.max = maxDate.toISOString().split("T")[0];     
+}
+
+
 
 function renderTasks() {
     taskList.innerHTML = "";
@@ -64,11 +88,25 @@ function renderTasks() {
             if (task.done) {
                 task.completed_dt = new Date().toLocaleDateString();
             }
-
+            saveTasks();
             renderTasks();
         });
 
         taskList.appendChild(li);
     });
+}
+
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const stored = localStorage.getItem("tasks");
+    if (stored) {
+        tasks = JSON.parse(stored).map(task => ({
+            ...task,
+            creation: new Date(task.creation)   // revive string back into a Date object
+        }));
+    }
 }
 
