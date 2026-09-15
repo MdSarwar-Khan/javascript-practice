@@ -80,14 +80,23 @@ function renderTasks() {
             <span class="complete">
                 ${task.done ? task.completed_dt : task.due_dt}
             </span>
+
+            <span class="delete">
+            <button class="deletebtn">✕</button>
+            </span>
         `;
 
-        li.querySelector('input[type="checkbox"]').addEventListener("change", (e) => {
+        li.querySelector('input[type="checkbox"]').addEventListener("change", (e) => {   //checkbox functionality
             task.done = e.target.checked;
 
             if (task.done) {
                 task.completed_dt = new Date().toLocaleDateString();
             }
+            saveTasks();
+            renderTasks();
+        });
+        li.querySelector(".deletebtn").addEventListener("click", () => {  //delete button functionality
+            tasks.splice(index, 1);
             saveTasks();
             renderTasks();
         });

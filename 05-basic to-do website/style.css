@@ -118,7 +118,7 @@ body {
 .listheader,
 #tasklist li {
     display: grid;
-    grid-template-columns: 50px 70px 2fr 1fr 1fr 1fr;
+    grid-template-columns: 50px 70px 2fr 1fr 1fr 1fr 60px;
     align-items: center;
     padding: 15px 10px;
     border-bottom: 1px solid #c9bfe0;
@@ -128,7 +128,7 @@ body {
     font-size: 15px;
     font-weight: normal;
     color: #221238;
-    list-style: none; /* kills the bullet point */
+    list-style: none; 
 }
 
 #tasklist {
@@ -207,4 +207,15 @@ body {
 
 #submit:active {
     transform: translateY(0);
+}
+
+.deletebtn {
+    background: none;
+    border: none;
+    color: #6E1E2D;
+    font-size: 16px;
+    cursor: pointer;
+}
+.deletebtn:hover {
+    color: #B8860B;
 }
