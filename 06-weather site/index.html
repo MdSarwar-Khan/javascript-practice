@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="weather-app">
+
+        <!-- ================= LEFT SIDE ================= -->
+        <section class="left-section">
+
+            <!-- Logo -->
+            <div class="logo">
+                Wiither<span>⚡</span>
+            </div>
+
+            <div class="current-weather">
+                <div class="temperature">
+                    <span id="temp-value">16</span>
+                </div>
+                
+                <div class="location-info">
+                    <h1 id="city-name">London</h1>
+                    <p id="country-name">United Kingdom</p>
+                    <p id="date-time">Monday, 24 Aug 2026</p>
+                    <p> Feels like <span id="feel">16</span>°</p>
+                </div>
+                 <div class="weather-icon" id="weather-icon">
+                     ☁
+                 </div>
+                </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+        <aside class="right-section">
+
+            <!-- Search -->
+            <div class="search-box">
+
+                <input 
+                    id="loc-search"
+                    type="text" 
+                    placeholder="Search Location..."
+                >
+
+                <button id="search">
+                    🔍
+                </button>
+
+            </div>
+
+
+            <!-- Weather Details -->
+            <section class="weather-details">
+
+                <p class="section-title">Weather Details...</p>
+
+                <h2 id="description">THUNDERSTORM WITH LIGHT DRIZZLE</h2>
+
+
+                <div class="detail-row">
+                    <span>Pressure</span>
+                    <strong id="Pressure">19°</strong>
+                    <span class="detail-icon hot">♨</span>
+                </div>
+
+                <div class="detail-row">
+                    <span>Wind Direction</span>
+                    <strong id="wind-direction">w</strong>
+                    <span class="detail-icon cold">♧</span>
+                </div>
+
+                <div class="detail-row">
+                    <span>Humidity</span>
+                    <strong id="humid">58%</strong>
+                    <span class="detail-icon">♧</span>
+                </div>
+
+                <div class="detail-row">
+                    <span>Cloudy</span>
+                    <strong id="cloudy">86%</strong>
+                    <span class="detail-icon">☁</span>
+                </div>
+
+                <div class="detail-row">
+                    <span>Wind</span>
+                    <strong id="windy">5</strong>km/h
+                    <span class="detail-icon">≋</span>
+                </div>
+
+            </section>
+
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+
+            <!-- Forecast -->
+            <section class="forecast">
+
+                <p class="section-title">
+                    Today's Weather Forecast...
+                </p>
+
+
+                <div class="forecast-item">
+
+                    <div class="forecast-icon">
+                        ❄
+                    </div>
+
+                    <div class="forecast-info">
+                        <span>09:00</span>
+                        <p>Snow</p>
+                    </div>
+
+                    <strong>19°</strong>
+
+                </div>
+
+
+                <div class="forecast-item">
+
+                    <div class="forecast-icon">
+                        ❄
+                    </div>
+
+                    <div class="forecast-info">
+                        <span>12:00</span>
+                        <p>Snow</p>
+                    </div>
+
+                    <strong>18°</strong>
+
+                </div>
+
+
+                <div class="forecast-item">
+
+                    <div class="forecast-icon">
+                        ☁
+                    </div>
+
+                    <div class="forecast-info">
+                        <span>15:00</span>
+                        <p>Cloudy</p>
+                    </div>
+
+                    <strong>17°</strong>
+
+                </div>
+
+
+                <div class="forecast-item">
+
+                    <div class="forecast-icon">
+                        🌧
+                    </div>
+
+                    <div class="forecast-info">
+                        <span>18:00</span>
+                        <p>Rain</p>
+                    </div>
+
+                    <strong>16°</strong>
+
+                </div>
+
+            </section>
+
+        </aside>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
