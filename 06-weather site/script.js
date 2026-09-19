@@ -39,7 +39,7 @@ async function getWeather() {
         date.innerText = data.location.localtime;
         pressure.innerText = data.current.pressure;
         humidit.innerText =  data.current.humidity;
-        wind.innerText = data.current.wind_speed;
+        wind.innerText = data.current.wind_speed + "km/h";
         feelslike.innerText = data.current.feelslike;
         weatherdescriptions.innerText = data.current.weather_descriptions;
         cloudy.innerText = data.current.cloudcover + "%";
