@@ -15,8 +15,6 @@ const cloudy = document.getElementById("cloudy");
 const windDirection = document.getElementById("wind-direction");
 
 
-
-
 const API_KEY = "c3d3eed6059ab44f875087207db368f0";
 
 
@@ -45,6 +43,8 @@ async function getWeather() {
         cloudy.innerText = data.current.cloudcover + "%";
         windDirection.innerText = data.current.wind_dir;
 
+        setBackground(data.current.weather_descriptions[0]);
+
     }
     catch (error) {
          console.log("Error:", error);
@@ -60,4 +60,25 @@ input.addEventListener("keydown", (e) => {
         searchbtn.click();
     }
 });
+
+const app = document.querySelector(".weather-app");
+
+function setBackground(description) {
+    const text = description.toLowerCase();
+    let image = "clear.png"; // default (sunny / clear)
+
+    if (text.includes("thunder")) {
+        image = "thunder.jpg";
+    } else if (text.includes("snow") || text.includes("blizzard") || text.includes("ice")) {
+        image = "snow.jpg";
+    } else if (text.includes("rain") || text.includes("drizzle") || text.includes("shower")) {
+        image = "rain.jpg";
+    } else if (text.includes("mist") || text.includes("fog") || text.includes("haze")) {
+        image = "fog.jpg";
+    } else if (text.includes("cloud") || text.includes("overcast")) {
+        image = "clouds.jpg";
+    }
+
+    app.style.backgroundImage = `url("weather-img/${image}")`;
+}
 
