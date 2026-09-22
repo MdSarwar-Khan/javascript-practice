@@ -43,6 +43,9 @@ async function getWeather() {
         cloudy.innerText = data.current.cloudcover + "%";
         windDirection.innerText = data.current.wind_dir;
 
+        const iconUrl = data.current.weather_icons[0];
+        icons.innerHTML = `<img src="${iconUrl}" alt="${data.current.weather_descriptions[0]}">`;      
+
         setBackground(data.current.weather_descriptions[0]);
 
     }

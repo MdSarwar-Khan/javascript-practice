@@ -128,6 +128,14 @@ body {
     text-align: center;
 }
 
+.weather-icon img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5)) brightness(1.1);
+}
+
 
 .right-section {
     width: 37%;
